@@ -6,6 +6,7 @@ $color_grey_bright: dimgray;
 $color_background_gradient_black: linear-gradient(42.33deg, #000000 -12.89%, #363636 91.62%);
 $color_background_gradient_orange: linear-gradient(42.33deg, #FFA55D -12.89%, #FFDACB 91.62%);
 
+//IPHONE
 html,
 body {
   height: 100%;
@@ -34,10 +35,8 @@ body {
   width: 280px;
   height: 464px;
   background: $color_background_gradient_orange;
-
   //margin: 50% auto;
   border-radius: 46px;
-
   margin: auto;
   align-items: center;
   justify-content: center;
@@ -87,20 +86,30 @@ body {
 .block__scrollable::-webkit-scrollbar-thumb:hover {
   background: $color_grey_bright;
 }
+// padding not dynamic?
 
-@media screen and (min-width: 380px) {
+//DESKTOP
+@media screen
+and (min-width: 380px)
+and (max-width : 2400px) {
   .block {
     width: 60%;
     height: 60%;
     margin: 12% auto 0;
-    padding: 120px 120px 0;
+    //padding: 120px 120px 0;
+
+    padding-top: 120px;
+    padding-left: 12%;
+    padding-right: 12%;
+
     background-image: url(./bg.svg);
     background-size: 100% 100%;
     background-position: 0 0;
     background-repeat: no-repeat;
     position: relative;
     min-width: 768px;
-    max-width: 1102px;
+    //max-width: 1102px;
+    max-width: 1800px;
     min-height: 386px;
     max-height: 695px;
   }
@@ -117,32 +126,29 @@ body {
 
   .block__scrollable{
     margin: 0;
-    padding: 0;
+    //padding: 0;
+    padding-right: 60px;
     width: 100%;
     height: 100%;
   }
 
   .block__scrollable__item{
-    //font-size: 1.6rem;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 }
 
-@media screen and (orientation:landscape) and (max-device-width: 900px) {
-  html{
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-    -webkit-transform-origin: left top;
-    -moz-transform-origin: left top;
-    -ms-transform-origin: left top;
-    -o-transform-origin: left top;
-    transform-origin: left top;
-    width: 320px; /*Разрешение экрана iPhone*/
-    position: absolute;
-    top: 100%;
-    left: 0
+
+// IPAD PORTRAIT
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+  .block {
+    padding: 220px 120px 90px;
+  }
+
+  .block__scrollable__item{
+    font-size: 1.6rem;
   }
 }
+
